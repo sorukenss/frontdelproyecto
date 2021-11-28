@@ -58,7 +58,22 @@ export class NavMenuComponent {
             routerLink: ['/consultar-cita']
           }
           ]
-        },{
+        }, {
+          label: 'Datos',
+          icon: 'pi pi-fw pi-book',
+          items: [{
+            label: 'Datos Personales',
+            icon: 'pi pi-fw pi-book',
+            routerLink: ['paciente-mostrar/:id']
+          },
+          {
+            label: 'Prueba',
+            icon: 'pi pi-fw pi-list',
+            routerLink: ['/consultar-cita']
+          }
+          ]
+        },
+        {
             label: 'Cerrar Sesión',
             icon: 'pi pi-fw pi-list',
             command: e => this.logout()

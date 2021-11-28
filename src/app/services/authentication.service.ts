@@ -20,7 +20,6 @@ export class AuthenticationService {
   }
 
   login(password: string, user: string) {
-    debugger
     return this.http.post<any>(this.baseUrl+`api/login/`, { user, password })
       .pipe(
         catchError(this.handleErrorService.handleError<User>('Inicio Sesion', null)),

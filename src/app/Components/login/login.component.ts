@@ -36,7 +36,8 @@ export class LoginComponent implements OnInit {
     this.loginService.login(this.user.password, this.user.User)
       .pipe(first())
       .subscribe(
-        data => {
+        data => { 
+          if(data)
           window.location.reload();
         },
         error => {

@@ -27,6 +27,7 @@ export class MostrarPacienteComponent implements OnInit {
     let response;
     this.pacienteService.getById(this.Id).subscribe((r) => {
       response = r;
+      console.log(r);
       this.paciente = response.paciente;
      
 
