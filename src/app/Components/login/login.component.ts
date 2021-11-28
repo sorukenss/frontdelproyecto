@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit {
       .pipe(first())
       .subscribe(
         data => {
-          //window.location.reload();
+          window.location.reload();
         },
         error => {
           console.log(error.error);

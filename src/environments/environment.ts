@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  ruta:"https://consultoriopsicologicoapi.azurewebsites.net/",
+  ruta:"https://apipsicologia.azurewebsites.net/",
 };
 
 /*
