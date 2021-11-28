@@ -1,0 +1,15 @@
+input {
+    height: 45px;
+    
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: none;
+    border-bottom: 2px solid black ;
+  }
+  #utilidadesfecha{
+    background-color:whitesmoke;
+    color:black;
+}
+#fechautilidad{
+    font-family: georgia;
+}

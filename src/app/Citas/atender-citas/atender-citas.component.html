@@ -1,0 +1,106 @@
+<div>
+    <form action="">
+        <div>
+            <div class="card"
+                style="width: 50rem; margin-left: 180px; margin-top: 7%; margin-bottom:10px; box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4)">
+                <mat-tab-group>
+                    <mat-tab label="Informacion del paciente">
+                        <div>
+                            <form action="">
+                                <div>
+                                    <div class="row">
+                                        <div class="col" style="margin-left: 3px" style="font-style:italic">
+                                            <label for=""><b>Identificación:</b></label>
+                                            <input type="text" disabled name="identificacion">
+                                        </div>
+                                        <div class="col" style="margin-left: 3px" style="font-style:italic">
+                                            <label><b>Nombre:</b></label>
+                                            <div>
+                                                <input type="text" disabled name="nombres">
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div>
+                                            <div class="card"
+                                                style="width: 45rem; margin-left:5% ;  margin-top: 7%; margin-bottom:10px; box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4)">
+                                                <div class="card-body">
+                                                    <h5>Historia Clínica</h5>
+                                                    <p-table [value]="historial" [paginator]="true" [rows]="10"
+                                                        [showCurrentPageReport]="true" responsiveLayout="scroll"
+                                                        currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+                                                        [rowsPerPageOptions]="[1,2,3]">
+                                                        <ng-template pTemplate="header">
+                                                            <tr>
+                                                                <th>Fecha</th>
+                                                                <th>Doctor</th>
+                                                                <th>Causa</th>
+                                                            </tr>
+                                                        </ng-template>
+                                                        <ng-template pTemplate="body" let-h>
+
+                                                            <tr>
+                                                                <td>{{h.fecha}}</td>
+                                                                <td>{{h.doctor}}</td>
+                                                                <td>{{h.causa}}</td>
+                                                                <td>
+                                                                    <button pButton pRipple type="button"
+                                                                        (click)="open()" icon="pi pi-arrow-circle-right"
+                                                                        pTooltip="Apartar cita" tooltipPosition="right"
+                                                                        class="p-button-rounded p-button-info"></button>
+                                                                </td>
+                                                            </tr>
+                                                        </ng-template>
+                                                    </p-table>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </form>
+                        </div>
+
+                    </mat-tab>
+                    <mat-tab label="Diagnostico">
+                        <div class="row" style="margin-left: 2px;">
+                            <label style="font-style: italic " for=""><b> Diagnostico: </b></label>
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col">
+                                <textarea type="text" class="text-diagnostico" name="Diagnostico"></textarea>
+                            </div>
+
+                        </div>
+                    </mat-tab>
+                    <mat-tab label="Tratamiento">
+                        <div class="card-body" >
+
+                            <label id="RegistroTratamiento" for="">Medicamento</label>
+                            <input type="text" placeholder="Medicamento" id="inputRegistroTratamiento"
+                                name="Medicamento">
+                            <label id="RegistroTratamiento">Horario</label>
+                            <input type="text" placeholder="Horario" id="inputRegistroTratamiento" name="Hora">
+
+                            <div class="mb-3">
+                                <label name="RegistroTratamiento">Recomendaciones</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            </div>
+                            <div style="margin-left: 40%; margin-top: 10px; margin-bottom: -10px">
+                                <button pButton pRipple type="button" label="Registrar tratamiento" class="p-button-rounded p-button-help"></button>
+                            </div>
+                        </div>
+                       
+
+                    </mat-tab>
+                </mat-tab-group>
+
+            </div>
+        </div>
+    </form>
+</div>

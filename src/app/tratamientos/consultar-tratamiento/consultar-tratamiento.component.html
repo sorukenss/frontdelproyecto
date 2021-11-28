@@ -1,0 +1,47 @@
+<div>
+    <form action="">
+        <div>
+            <div class="card"
+                style="width: 60rem; margin-left: 150px; margin-top: 7%; margin-bottom:10px; box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4)">
+                <div class="card-body">
+                    <div class="card" id="utilidadesfecha">
+                        <div class="p-field p-col-2 p-md-4" style="font-style:italic" >
+                            <label for=""><b>Tratamientos:</b></label>
+                            
+                    <div style="margin-top:-50px">
+                        <div style="margin-bottom: -50px; margin-left: 70%;">
+                            <input type="text" name="search">
+                        </div>
+                        <div style="margin-left:95%;">
+                            <button pButton pRipple type="button" icon="pi pi-search" pTooltip="Buscar Tratamiento"
+                                tooltipPosition="right" class="p-button-outlined"></button>
+                        </div>
+                    </div>
+                        </div>
+                     </div>
+                    
+                    <p-table [value]="personas" [paginator]="true" [rows]="10" [showCurrentPageReport]="true"
+                        responsiveLayout="scroll"
+                        currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+                        [rowsPerPageOptions]="[1,2,3]">
+                        <ng-template pTemplate="header">
+                            <tr>
+                                <th scope="col">Identificación</th>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Medicamento</th>
+                                <th scope="col">Horario</th>
+                                <th scope="col">Diagnostico</th>
+                                <th scope="col">Recomendacion</th>
+                                <th scope="col">Modificar</th>
+                            </tr>
+                        </ng-template>
+                        <ng-template pTemplate="body" let-persona>
+
+                        </ng-template>
+                    </p-table>
+
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,50 @@
+<div>
+    <form action="">
+        <div>
+            <div class="card"
+                style="width: 50rem; margin-left: 180px; margin-top: 7%;  box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4)">
+                <div class="row">
+                    <div class="col" style="margin-left: 3px" style="font-style:italic">
+                        <label for=""><b>Identificación:</b></label>
+                        <input type="text" disabled name="identificacion">
+                    </div>
+                    <div class="col" style="margin-left: 3px" style="font-style:italic">
+                        <label><b>Nombre:</b></label>
+                        <div>
+                            <input type="text" disabled name="nombres">
+                        </div>
+                    </div>
+                </div>
+                <div class="row"> 
+                    <div>
+                        <div class="card"
+                            style="width: 45rem; margin-left:5% ;  margin-top: 7%; margin-bottom:10px; box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4)">
+                            <div class="card-body">
+                                <h5>Tratamientos</h5>
+                                <p-table [value]="personas" [paginator]="false" [rows]="3" [showCurrentPageReport]="true"
+                                    responsiveLayout="scroll">
+                                    <ng-template pTemplate="header">
+                                        <tr>
+                                            <th scope="col">Identificación</th>
+                                            <th scope="col">Nombre</th>
+                                            <th scope="col">Medicamento</th>
+                                            <th scope="col">Horario</th>
+                                            <th scope="col">Diagnostico</th>
+                                            <th scope="col">Recomendacion</th>
+                                            <th scope="col">Modificar</th>
+                                        </tr>
+                                    </ng-template>
+                                    <ng-template pTemplate="body" let-persona>
+            
+                                    </ng-template>
+                                </p-table>
+            
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

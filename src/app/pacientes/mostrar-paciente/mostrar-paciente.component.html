@@ -1,0 +1,93 @@
+<div>
+    <form action="">
+        <div>
+            <div class="card"
+                style="width: 30rem; margin-left: 25%; margin-top: 1%; margin-bottom:10px; box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4)">
+                <div class="card-body">
+                    <h4>Paciente</h4>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <label for="">Identificación</label>
+                                <input type="text" disabled [(ngModel)]=" paciente.persona.identification" disabled name="identificacion" >
+                            </div>
+                            <div class="col">
+                                <label>Nombres</label>
+                                <input type="text"[(ngModel)]=" paciente.persona.nombre" name="nombres" >
+
+                            </div>
+                        </div>
+                    </div>
+                  
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <label>Apellidos</label>
+                                <input type="text" [(ngModel)]=" paciente.persona.apellido" name="apellidos" >
+                            </div>
+                            <div class="col">
+                                <label>Edad</label>
+                                <input type="number" [(ngModel)]=" paciente.persona.edad" name="edad" >
+
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <label>Usuario</label>
+                                <input type="text" [(ngModel)]=" paciente.persona.usuario" name="user" >
+                            </div>
+                            <div class="col">
+                                <label>Contraseña</label>
+                                <input type="text" [(ngModel)]=" paciente.persona.password" name="pass" >
+
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <label>Correo</label>
+                                <input type="text" [(ngModel)]="paciente.persona.correo" name="correo">
+                            </div>
+                            <div class="col">
+                                <label>Direccion</label>
+                                <input type="text" [(ngModel)]="paciente.persona.direccion" name="direccion">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <label>Telefono</label>
+                                <input type="text" [(ngModel)]="paciente.persona.telefono" name="telefono">
+                            </div>
+                        </div>
+                    </div>
+                    <label>Sexo</label>
+                    <select name="sexo" [(ngModel)]=" paciente.persona.sexo"  class="form-select" aria-label="Default select example"
+                        >
+                        <option value="M">Masculino</option>
+                        <option value="F">Femenino</option>
+                    </select>
+                    <div style="margin-left: 10%; margin-top: 10px; margin-bottom: -10px">
+                        <button pButton pRipple type="button" (click)="update()" label="Modificar" class="p-button-rounded p-button-info"></button>
+                        <button style="margin-left: 10px;" (click)="delete(paciente.persona.identification)" pButton pRipple type="button" label="Eliminar" class="p-button-rounded p-button-danger"></button>
+                        
+                        <button  (click)="open()" pButton pRipple style="margin-left: 10px;" type="button" label="Historial" class="p-button-rounded p-button-warning"></button>
+                    </div>
+                    <div>
+                        <p-dialog header="Respuesta:" [(visible)]="visible" [modal]="true" [style]="{width: '50vw'}"
+                            [baseZIndex]="10000" [draggable]="false" [resizable]="false">
+                            <p class="p-m-0" >Paciente modificado correctamente</p>
+                        </p-dialog>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,32 @@
+.mat-tab-label {
+    min-width: 33% !important;
+    padding: 5px;
+    
+    color: black;
+    font-weight: 700;
+}
+input {
+    width: 300px;
+    height: 30px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: none;
+    border-bottom: 2px solid black ;
+  }
+  .text-diagnostico{
+    width: 730px;
+    height: 300px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: none;
+    border-bottom: 2px solid black ;
+  }
+  #RegistroTratamiento{
+    margin-right: 100px;
+  }
+  #inputRegistroTratamiento{
+    margin-right: 200px;
+    width : 700px;
+    height : 50px
+  }
+  

@@ -1,0 +1,233 @@
+<div>
+    
+        <div class="container" >
+            <div class="row">
+                <div class="col">
+                <form  [formGroup]="formGroup" autocomplete="off">
+                <div >
+                    <div class="card"
+                    style="width: 30rem;  margin-top: 1%; margin-bottom:10px; box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4)">
+
+                        <div class="card-body">
+                            <div>
+
+                                <h4>Registrar Psicologo</h4>
+                                <div class="container">
+                                    <div class="row">
+
+                                        <div class="col">
+                                            <label for="">Identificación</label>
+                                            <input type="text" [ngClass]="{ 'is-invalid':control.identification.errors && control.identification.touched }"
+                                                formControlName="identification"  class="form-control" id="identification" name="idenfication">
+                                                <div *ngIf="control.identification.errors" class="invalid-feedback">
+                                                    <div *ngIf="control.identification.errors.required">Se requiere la Identificación</div>
+                                                  
+                                                </div>
+                                        </div>
+                                        
+                                        <div class="col">
+                                            <label>Nombres</label>
+                                            <input type="text" formControlName="nombre" id="Nombre" name="Nombre"[ngClass]="{ 'is-invalid':control.nombre.errors && control.nombre.touched }"
+                                            formControlName="nombre" class="form-control">
+                                            <div *ngIf="control.nombre.errors" class="invalid-feedback">
+                                                <div *ngIf="control.nombre.errors.required">Se requiere el nombre</div>
+                                              
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col">
+                                            <label>Apellidos</label>
+                                            <input type="text" formControlName="apellido" id="Apellidos" name="Apellidos" [ngClass]="{ 'is-invalid':control.apellido.errors && control.apellido.touched }"
+                                            formControlName="apellido" class="form-control">
+                                            <div *ngIf="control.apellido.errors" class="invalid-feedback">
+                                                <div *ngIf="control.apellido.errors.required">Se requiere el apellido</div>
+                                              
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <label>Edad</label>
+                                            <input type="number" formControlName="edad" id="edad" name="edad" [ngClass]="{ 'is-invalid':control.edad.errors && control.edad.touched }"
+                                            formControlName="edad" class="form-control">
+                                            <div *ngIf="control.edad.errors" class="invalid-feedback">
+                                                
+                                                <div *ngIf="control.edad.errors.validEdad">{{control.edad.errors.messageEdad}}</div>
+
+                                        
+                                              
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col">
+                                            <label>Usuario</label>
+                                            <input type="text" formControlName="usuario" id="usuario" name="usuario" [ngClass]="{ 'is-invalid':control.usuario.errors && control.usuario.touched }"
+                                            formControlName="usuario" class="form-control">
+                                            <div *ngIf="control.usuario.errors" class="invalid-feedback">
+                                                <div *ngIf="control.usuario.errors.required">Se requiere el usuario</div>
+                                              
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <label>Contraseña</label>
+                                            <input type="text" formControlName="password" id="password" name="password" [ngClass]="{ 'is-invalid':control.password.errors && control.password.touched }"
+                                            formControlName="password" class="form-control">
+                                            <div *ngIf="control.password.errors" class="invalid-feedback">
+                                                <div *ngIf="control.password.errors.required">Se requiere la contraseña</div>
+                                              
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col">
+                                            <label>Correo</label>
+                                            <input type="text" formControlName="correo" id="correo" name="correo" [ngClass]="{ 'is-invalid':control.correo.errors && control.correo.touched }"
+                                            formControlName="correo" class="form-control">
+                                            <div *ngIf="control.correo.errors" class="invalid-feedback">
+                                                <div *ngIf="control.correo.errors.required">Se requiere el correo</div>
+                                              
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <label>Direccion</label>
+                                            <input type="text" formControlName="direccion" id="direccion" name="direccion" [ngClass]="{ 'is-invalid':control.direccion.errors && control.direccion.touched }"
+                                            formControlName="direccion" class="form-control">
+                                            <div *ngIf="control.direccion.errors" class="invalid-feedback">
+                                                <div *ngIf="control.direccion.errors.required">Se requiere la direccion</div>
+                                              
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col">
+                                            <label>Telefono</label>
+                                            <input type="text"  formControlName="telefono" id="telefono" name="telefono" [ngClass]="{ 'is-invalid':control.telefono.errors && control.telefono.touched }"
+                                            formControlName="telefono" class="form-control">
+                                            <div *ngIf="control.telefono.errors" class="invalid-feedback">
+                                                <div *ngIf="control.telefono.errors.required">Se requiere el numero de telefono</div>
+                                                <div *ngIf="control.telefono.errors.maxlength">Se requiere el numero de telefono</div>
+                                              
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col">
+                                            <label>Sexo</label>
+                                            <select formControlName="sexo" class="form-select"
+                                                aria-label="Default select example" id="sexo" name="sexo">
+                                                <option value="M">Masculino</option>
+                                                <option value="F">Femenino</option>
+                                            </select>
+                                        </div>
+
+
+                                        <div class="col">
+                                            <label>Tipo de especialidad</label>
+                                            <select formControlName="nombreEspecialidad" class="form-select"
+                                                aria-label="Default select example" id="nombreEspecialidad" name="nombreEspecialidad">
+                                                <option value="Psicologia clinica">Psicologia clinica</option>
+                                                <option value="Psicologia anormal">Psicologia anormal</option>
+                                                <option value="Psicologia de la educacion">Psicologia de la educacion
+                                                </option>
+                                                <option value="Psicologia de la familia y pareja">Psicologia de la
+                                                    familia y
+                                                    pareja
+                                                </option>
+                                                <option value="Psicologia social">Psicologia social</option>
+                                            </select>
+                                        </div>
+                                        <div style="margin-left: 30%; margin-top: 10px; margin-bottom: -10px">
+                                            <button pButton pRipple type="button" label="Registrar Psicologo"
+                                                class="p-button-rounded p-button-help" [disabled]="formGroup.invalid"
+                                                (click)="onSubmit()"></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+<!--lo que sea-->
+
+                <div class="col">
+                    <div class="card"
+                        style="width: 35rem;   margin-bottom:10px; box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4)">
+
+                        <div class="card-body">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col mb-3">
+                                        <label>Día</label>
+                                        <select name="diaselect" class="form-select" aria-label="Default select example"
+                                            [(ngModel)]="dia" id="fecha" name="fecha">
+                                            <option value="lunes">Lunes</option>
+                                            <option value="martes">Martes</option>
+                                            <option value="miercoles">Miércoles</option>
+                                            <option value="jueves">Jueves</option>
+                                            <option value="viernes">Viernes</option>
+                                            <option value="sabado">Sábado</option>
+                                        </select>
+                                    </div>
+                                    <div class="col mb-3">
+                                        <label for="timeonly">Hora</label>
+                                        <p-calendar [(ngModel)]="date8" [timeOnly]="true" name="timeonly"></p-calendar>
+
+                                    </div>
+                                    <div class="col">
+                                        <button pButton pRipple type="button" icon="pi pi-plus"
+                                            pTooltip="Agregar a la agenda" tooltipPosition="right"
+                                            class="p-button-rounded p-button-help" (click)="mostrar()"
+                                            style="width:30px; height:30px; margin-top:25%"></button>
+                                    </div>
+
+                                </div>
+                                <div class="row">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Lunes</th>
+                                                <th scope="col">Martes</th>
+                                                <th scope="col">Miércoles</th>
+                                                <th scope="col">Jueves</th>
+                                                <th scope="col">Viernes</th>
+                                                <th scope="col">Sábado</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr *ngFor="let day of dias.numero; index as i">
+                                                <td> <div *ngIf="dias.lunes[i]!=undefined"> {{ dias.lunes[i] }}</div></td>
+                                                <td> <div *ngIf="dias.martes[i]!=undefined"> {{ dias.martes[i] }}</div></td>
+                                                <td> <div *ngIf="dias.miercoles[i]!=undefined"> {{ dias.miercoles[i] }}</div></td>
+                                                <td> <div *ngIf="dias.jueves[i]!=undefined"> {{ dias.jueves[i] }}</div></td>
+                                                <td> <div *ngIf="dias.viernes[i]!=undefined"> {{ dias.viernes[i] }}</div></td>
+                                                <td> <div *ngIf="dias.sabado[i]!=undefined"> {{ dias.sabado[i] }}</div></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+</div>

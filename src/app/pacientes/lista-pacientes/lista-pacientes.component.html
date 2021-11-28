@@ -1,0 +1,51 @@
+<div>
+    <form action="">
+        <div>
+            <div class="card"
+                style="width: 50rem; margin-left: 180px; margin-top: 7%; margin-bottom:10px; box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4)">
+                <div class="card-body">
+                    <div class="card" id="utilidadesfecha">
+                        <div class="p-field p-col-2 p-md-4">
+                            <h5>Pacientes</h5>
+                            <div style="margin-top:-44px">
+                                <div style="margin-bottom: -30px; margin-left: 60%;">
+                                    <input type="text" [(ngModel)]=" searchText" name="search">
+                                </div>
+                               
+                            </div>
+                        </div>
+                     </div>
+                    
+                    <p-table [value]="paciente|Filtropaciente:searchText" [paginator]="true" [rows]="10" [showCurrentPageReport]="true"
+                        responsiveLayout="scroll"
+                        currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+                        [rowsPerPageOptions]="[1,2,3]">
+                        <ng-template pTemplate="header">
+                            <tr>
+                                <th>Identificación</th>
+                                <th>Nombre</th>
+                                <th>Apellido</th>
+                                <th>Edad</th>
+                            </tr>
+                        </ng-template>
+                        <ng-template pTemplate="body" let-paciente>
+
+                            <tr>
+                                <td><a routerLink='/paciente-mostrar/{{paciente.codigoPaciente}}'>{{paciente.codigoPaciente}}</a></td>
+                                <td>{{paciente.persona.nombre}}</td>
+                                <td>{{paciente.persona.apellido}}</td>
+                                <td>{{paciente.persona.edad}}</td>
+                                <td>
+                                    <button pButton pRipple type="button" icon="pi pi-times"
+                                        pTooltip="Eliminar Paciente" tooltipPosition="right"
+                                        class="p-button-rounded p-button-danger" (click)="delete(paciente.codigoPaciente)"></button>
+                                </td>
+                            </tr>
+                        </ng-template>
+                    </p-table>
+
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

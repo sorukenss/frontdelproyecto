@@ -1,0 +1,44 @@
+<div>
+    <form autocomplete="off">
+     <div class="card" style="width: 60rem; margin-left:100px; margin-top: 1%; margin-bottom:10px; box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4)">
+         <div class="card-body">
+             <div class="card" id="utilidadesfecha">
+                <div class="p-field p-col-2 p-md-4">
+                    <label id="fechautilidad" for="fechadeutilidad" scope="col">Fecha De Utilidad :</label>
+                    <p-calendar [(ngModel)]="value" view="month" dateFormat="mm/yy" [yearNavigator]="true" yearRange="2000:2030" [readonlyInput]="true" inputId="monthpicker"></p-calendar>
+                </div>
+             </div>
+                
+             
+            <p-table [value]="utilidades" [paginator]="true" [rows]="10" [showCurrentPageReport]="true" responsiveLayout="scroll"
+            currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [rowsPerPageOptions]="[1,2,3]">
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th scope="col">Codigo De La Cita</th>
+                        <th scope="col">Identificación</th>
+                        <th scope="col">Fecha De Atención</th>
+                        <th scope="col">Hora De Atención</th>
+                        <th scope="col">Valor</th>
+                      </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-utilidades>    
+                    <tr>
+                        <td>{{utilidades.codigodecita}}</td>
+                        <td>{{utilidades.identificacion}}</td>
+                        <td>{{utilidades.fecha}}</td>
+                        <td>{{utilidades.hora}}</td>
+                        <td>{{utilidades.valor}}</td>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="footer">
+                    <tr>
+                        <td colspan="4">Totals</td>
+                        <td>$110,000</td>
+                    </tr>
+                </ng-template>
+            </p-table>
+         </div>
+         
+     </div>
+    </form>
+</div>
