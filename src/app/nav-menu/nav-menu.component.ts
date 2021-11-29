@@ -75,7 +75,7 @@ export class NavMenuComponent {
         },
         {
             label: 'Cerrar Sesión',
-            icon: 'pi pi-fw pi-list',
+            icon: 'pi pi-fw pi-minus-circle',
             command: e => this.logout()
         }
       ];
