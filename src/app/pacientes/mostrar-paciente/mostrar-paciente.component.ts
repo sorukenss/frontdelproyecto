@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 import { Paciente } from 'src/app/models/paciente';
+import { User } from 'src/app/models/user';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 import { PacienteService } from 'src/app/services/paciente.service';
 @Component({
   selector: 'app-mostrar-paciente',
@@ -10,10 +12,18 @@ import { PacienteService } from 'src/app/services/paciente.service';
 })
 export class MostrarPacienteComponent implements OnInit {
   visible: boolean = false;
-
-  constructor(private router: Router, private routeActive: ActivatedRoute, private pacienteService: PacienteService) {
-
-
+  usuario: User;
+  cond : boolean
+  constructor(private router: Router, private loginService: AuthenticationService, private routeActive: ActivatedRoute, private pacienteService: PacienteService) {
+    let currentUser = this.loginService.currentUserValue;
+    if (currentUser) {
+      this.usuario = currentUser;
+      if(this.usuario.rol=="ADMINISTRADOR"){
+        this.cond=true;
+      }else{
+        this.cond=false;
+      }
+    }
   }
   paciente: Paciente;
   Id: string;
