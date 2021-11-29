@@ -14,7 +14,6 @@ export class AppComponent {
     let currentUser = this.loginService.currentUserValue;
     if (currentUser) {
       this.usuario = currentUser;
-      debugger
       if(this.usuario.estado=="INCOMPLETO"){
         this.cond=true;
       }else{
