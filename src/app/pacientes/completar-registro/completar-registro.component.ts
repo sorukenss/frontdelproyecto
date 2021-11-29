@@ -23,7 +23,6 @@ export class CompletarRegistroComponent implements OnInit {
 
   
   ngOnInit(): void {
-    this.buildForm();
     this.getById();
     
   }
@@ -35,6 +34,7 @@ export class CompletarRegistroComponent implements OnInit {
       console.log(r);
       this.paciente = response.paciente;
       this.persona=this.paciente.persona;
+      this.buildForm();
     })
   }
 
@@ -54,18 +54,17 @@ export class CompletarRegistroComponent implements OnInit {
   }
   private buildForm() {
      
-
-     this.persona.TipoDeIdentificacion= '';
-     this.persona.identification = this.paciente.codigoPaciente;
+    this.persona.identification = this.usuario.idPersona;
     this.persona.nombre = '';
     this.persona.apellido = '';
     this.persona.correo = '';
     this.persona.direccion = '';
     this.persona.edad = 0;
+    this.persona.passwordd = this.usuario.password;
     this.persona.sexo = '';
     this.persona.telefono = '';
-    this.persona.passwordd =this.paciente.persona.passwordd;
-    this.persona.usuario = this.paciente.persona.usuario;
+    debugger
+    this.persona.usuario = this.usuario.User;
     this.formGroup = this.formBuilder.group({
       identification: [this.persona.identification, Validators.required],
       nombre: [this.persona.nombre, Validators.required],
@@ -73,12 +72,15 @@ export class CompletarRegistroComponent implements OnInit {
       correo: [this.persona.correo, Validators.required],
       direccion: [this.persona.direccion, Validators.required],
       edad: [this.persona.edad, [Validators.required, CompletarRegistroComponent.validationEdad ]],
+      password: [this.persona.passwordd, Validators.required],
       sexo: [this.persona.sexo, Validators.required],
       telefono: [this.persona.telefono, Validators.required,Validators.maxLength(10)],
       usuario: [this.persona.usuario, Validators.required],
-      password: [this.persona.passwordd, Validators.required],
-     
     })
+     
+    
+     
+    
   }
    
   get control() {

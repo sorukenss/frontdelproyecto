@@ -37,7 +37,7 @@ export class NavMenuComponent {
   }
 
   validateRole(rol:string){
-    debugger
+    
     if(rol=='PACIENTE'){
       this.opcionesPacientes();
     }else if(rol=='PSICOLOGO'){
