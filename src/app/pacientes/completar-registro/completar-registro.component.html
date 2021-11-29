@@ -9,65 +9,65 @@
                         <div class="row">
                             <div class="col">
                                 <label for="">Identificación</label>
-                                <input type="text"  [(ngModel)]="paciente.codigoPaciente" type="number" name="identificacion">
+                                <input type="text"  type="number" value="1192790" name="identificacion">
                             </div>
                             <div class="col">
                                 <label>Nombres</label>
-                                <input type="text" [(ngModel)]="persona.nombre" name="nombres">
-
+                                <input type="text"  name="nombres">
+  
                             </div>
                         </div>
                     </div>
-
+  
                     <div class="container">
                         <div class="row">
                             <div class="col">
                                 <label>Apellidos</label>
-                                <input type="text" [(ngModel)]="persona.apellido" name="apellidos">
+                                <input type="text"  name="apellidos">
                             </div>
                             <div class="col">
                                 <label>Edad</label>
-                                <input type="number" [(ngModel)]="persona.edad" name="edad">
-
+                                <input type="number"  name="edad">
+  
                             </div>
                         </div>
                     </div>
-
+  
                     <div class="container">
                         <div class="row">
                             <div class="col">
                                 <label>Usuario</label>
-                                <input type="text" [(ngModel)]="persona.usuario" name="user">
+                                <input type="text" value ="isaacpimienta"  name="user">
                             </div>
                             <div class="col">
                                 <label>Contraseña</label>
-                                <input type="text" [(ngModel)]="persona.passwordd" name="pass">
+                                <input type="text" value="12345" name="pass">
                             </div>
                         </div>
                     </div>
-
+  
                     <div class="container">
                         <div class="row">
                             <div class="col">
                                 <label>Correo</label>
-                                <input type="text" [(ngModel)]="persona.correo" name="correo">
+                                <input type="text" name="correo">
                             </div>
                             <div class="col">
                                 <label>Direccion</label>
-                                <input type="text" [(ngModel)]="persona.direccion" name="direccion">
+                                <input type="text" name="direccion">
                             </div>
                         </div>
                     </div>
-
+  
                     <div class="container">
                         <div class="row">
                             <div class="col">
                                 <label>Telefono</label>
-                                <input type="text" [(ngModel)]="persona.telefono" type="number" name="telefono">
+                                <input type="text"  type="number" name="telefono">
                             </div>
                             <div class="col">
                                 <label>Sexo</label>
-                                <select name="sexo" [(ngModel)]="persona.sexo" class="form-select"
+                                <select name="sexo"  class="form-select"
                                     aria-label="Default select example">
                                     <option value="M">Masculino</option>
                                     <option value="F">Femenino</option>
@@ -75,13 +75,13 @@
                             </div>
                         </div>
                     </div>
-
+  
                     <div style="margin-left: 30%; margin-top: 10px; margin-bottom: -10px">
-                        <button pButton pRipple type="button" (click)="add()" label="Registrar Paciente"
+                        <button pButton pRipple type="button"  label="Registrar Paciente"
                             class="p-button-rounded p-button-help"></button>
                     </div>
                 </div>
             </div>
         </div>
     </form>
-</div>
+  </div>

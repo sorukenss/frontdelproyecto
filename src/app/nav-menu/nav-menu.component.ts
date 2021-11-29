@@ -63,8 +63,8 @@ export class NavMenuComponent {
           icon: 'pi pi-fw pi-book',
           items: [{
             label: 'Datos Personales',
-            icon: 'pi pi-fw pi-users',
-            routerLink: ['paciente-mostrar/:id']
+            icon: 'pi pi-fw pi-book',
+            routerLink: ['/paciente-mostrar']
           },
           {
             label: 'Prueba',
