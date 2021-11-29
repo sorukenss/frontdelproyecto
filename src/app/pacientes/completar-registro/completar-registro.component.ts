@@ -34,4 +34,12 @@ export class CompletarRegistroComponent implements OnInit {
     })
   }
 
+  update(){
+    let response;
+    this.paciente.codigoPaciente=this.paciente.persona.identification;
+    this.pacienteService.update(this.paciente).subscribe(r=>{
+      response=r
+    })
+  }
+
 }

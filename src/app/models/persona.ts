@@ -1,4 +1,5 @@
 export class Persona {
+    TipoDeIdentificacion : string
     identification: string
     nombre: string
     apellido: string
