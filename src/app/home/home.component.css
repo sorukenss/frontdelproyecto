@@ -3,11 +3,36 @@
     padding: 1rem; 
     
     text-align: center;
-
+    font-family: 'Kalam', cursive; font-size: 45px;
   }
-
+  .titulo2 {
+    margin: 1rem;
+    padding: 1rem; 
+    margin-top: -0.5%;
+    text-align: center;
+    font-family: 'Kalam', cursive; font-size: 25px;
+  }
+  
   .parrafo {
     margin-right: 5%;
+    margin-top: -2%;
+    text-align: center;
     
-    text-align:  left;
+    font-family: 'Kalam'; font-size: 15px;
+  }
+  .parrafo2 {
+    margin-right: 5%;
+    margin-top: -1%;
+    text-align: center;
+    
+    font-family: 'Kalam'; font-size: 15px;
+  }
+  
+  .card {
+    width: 88rem; 
+    margin-left: 20px;
+     margin-top: 3%; 
+     margin-bottom:10px;
+      box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+      background-color:#f4acb7;
   }

@@ -1,12 +1,14 @@
 .footer-dark {
     padding:50px 0;
-    color:#f0f9ff;
-    background-color:#276678;
+    color:#d8e2dc;
+    font-family: 'Kalam', cursive;
+    background-color:#9d8189;
   }
   
   
   .footer-dark h3 {
     margin-top:0;
+    font-family: 'Kalam', cursive;
     margin-bottom:12px;
     font-weight:bold;
     font-size:16px;
@@ -21,7 +23,7 @@
   }
   
   .footer-dark ul a {
-    color:white;
+    color:#d8e2dc;
     text-decoration:none;
     opacity:0.9;
   }
@@ -73,7 +75,7 @@
     border-radius:50%;
     box-shadow:0 0 0 1px rgba(255,255,255,0.4);
     margin:0 8px;
-    color:#fff;
+    color:white;
     opacity:0.75;
   }
   
