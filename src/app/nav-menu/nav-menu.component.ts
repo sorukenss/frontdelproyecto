@@ -63,7 +63,7 @@ export class NavMenuComponent {
           icon: 'pi pi-fw pi-book',
           items: [{
             label: 'Datos Personales',
-            icon: 'pi pi-fw pi-book',
+            icon: 'pi pi-fw pi-users',
             routerLink: ['paciente-mostrar/:id']
           },
           {
@@ -75,7 +75,7 @@ export class NavMenuComponent {
         },
         {
             label: 'Cerrar Sesión',
-            icon: 'pi pi-fw pi-list',
+            icon: 'pi pi-fw pi-minus-circle',
             command: e => this.logout()
         }
       ];
