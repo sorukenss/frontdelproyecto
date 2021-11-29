@@ -5,5 +5,6 @@ export class User {
       lastName: string;
       token: string;
       rol:string
+      estado:string
     }
     

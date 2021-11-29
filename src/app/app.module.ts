@@ -92,6 +92,7 @@ import { AlertModalComponent } from './@base/alert-modal/alert-modal.component';
 import { AgendapipePipe } from './pipes/agendapipe.pipe';
 import { LoginComponent } from './Components/login/login.component';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/compiler';
+import { CompletarRegistroComponent } from './pacientes/completar-registro/completar-registro.component';
 
 
 @NgModule({
@@ -123,6 +124,7 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/compiler';
     AlertModalComponent,
     AgendapipePipe,
     LoginComponent,
+    CompletarRegistroComponent,
 
   ],
   imports: [

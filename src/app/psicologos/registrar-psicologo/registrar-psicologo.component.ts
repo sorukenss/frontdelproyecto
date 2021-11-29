@@ -164,7 +164,7 @@ export class RegistrarPsicologoComponent implements OnInit {
     this.persona.correo = '';
     this.persona.direccion = '';
     this.persona.edad = 0;
-    this.persona.password = '';
+    this.persona.passwordd = '';
     this.persona.sexo = '';
     this.persona.telefono = '';
     this.persona.usuario = '';
@@ -175,7 +175,7 @@ export class RegistrarPsicologoComponent implements OnInit {
       correo: [this.persona.correo, Validators.required],
       direccion: [this.persona.direccion, Validators.required],
       edad: [this.persona.edad, [Validators.required, RegistrarPsicologoComponent.validationEdad ]],
-      password: [this.persona.password, Validators.required],
+      password: [this.persona.passwordd, Validators.required],
       sexo: [this.persona.sexo, Validators.required],
       telefono: [this.persona.telefono, Validators.required,Validators.maxLength(10)],
       usuario: [this.persona.usuario, Validators.required],

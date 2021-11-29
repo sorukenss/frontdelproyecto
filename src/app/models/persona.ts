@@ -5,7 +5,7 @@ export class Persona {
     sexo: string
     edad: number
     usuario: string
-    password: string
+    passwordd: string
     direccion : string 
     foto : string
     correo : string
