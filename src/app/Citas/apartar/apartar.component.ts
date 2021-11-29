@@ -3,6 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalComponent } from 'src/app/@base/modal/modal.component';
 import { Citas } from 'src/app/models/citas';
+import { User } from 'src/app/models/user';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 import { CitaService } from 'src/app/services/cita.service';
 
 @Component({
@@ -17,8 +19,11 @@ export class ApartarComponent implements OnInit {
   hora: string;
   codigoAgenda: string;
   cita: Citas;
-  constructor(private routeActive: ActivatedRoute, private citaService: CitaService, private modalService: NgbModal) {
+  usuario: User;
+  constructor(private routeActive: ActivatedRoute, private citaService: CitaService, private modalService: NgbModal,private loginService: AuthenticationService) {
     this.cita = new Citas();
+    let currentUser=this.loginService.currentUserValue;
+    this.usuario=currentUser;
   }
 
   ngOnInit(): void {
@@ -35,7 +40,7 @@ export class ApartarComponent implements OnInit {
     this.cita.fecha = this.fecha;
     this.cita.hora = (this.hora + "").replace('.', ':');
     this.cita.codigoAgenda = this.codigoAgenda;
-    this.cita.idPaciente='1234';
+    this.cita.idPaciente=this.usuario.idPersona;
     this.citaService.post(this.cita).subscribe((r) => {
       if (r != null) {
         a = r;
