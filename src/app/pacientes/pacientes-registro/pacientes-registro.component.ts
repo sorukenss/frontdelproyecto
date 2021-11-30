@@ -33,6 +33,7 @@ export class PacientesRegistroComponent implements OnInit {
         const messageBox = this.modalService.open(ModalComponent);
         messageBox.componentInstance.title = "Resultado";
         messageBox.componentInstance.cuerpo = "Info: " + a.mensaje;
+        
       }
 
 
