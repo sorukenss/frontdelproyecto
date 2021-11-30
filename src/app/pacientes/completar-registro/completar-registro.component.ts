@@ -39,13 +39,13 @@ export class CompletarRegistroComponent implements OnInit {
   }
 
   update(){
-    debugger
+    
     let response;
     this.paciente.codigoPaciente=this.paciente.persona.identification;
     this.pacienteService.update(this.paciente).subscribe((r)=>{
       response=r
       this.usuario.estado="COMPLETO";
-      debugger
+    
       sessionStorage.setItem('login', JSON.stringify(this.usuario));
       this.router.navigateByUrl("");
       window.location.reload();

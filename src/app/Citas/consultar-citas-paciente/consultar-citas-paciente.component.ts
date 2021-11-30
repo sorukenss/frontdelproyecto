@@ -24,7 +24,7 @@ export class ConsultarCitasPacienteComponent implements OnInit {
     let response;
     this.citaService.getByPacienteId(currentUser.idPersona).subscribe(r => {
       response = r;
-      debugger
+      
       this.citas = response.citas;
 
     })

@@ -13,19 +13,21 @@ import { PacienteService } from 'src/app/services/paciente.service';
 export class MostrarPacienteComponent implements OnInit {
   visible: boolean = false;
   usuario: User;
-  cond : boolean
+  cond : boolean;
+  tipodocumento:string;
+  paciente: Paciente;
   constructor(private router: Router, private loginService: AuthenticationService, private routeActive: ActivatedRoute, private pacienteService: PacienteService) {
     let currentUser = this.loginService.currentUserValue;
     if (currentUser) {
       this.usuario = currentUser;
-      if(this.usuario.rol=="ADMINISTRADOR"){
+      if(this.usuario.rol=="ADMINISTRADOR" || this.usuario.rol=="PACIENTE"){
         this.cond=true;
       }else{
         this.cond=false;
       }
     }
   }
-  paciente: Paciente;
+  
   Id: string;
   mensajee:string;
   ngOnInit(): void {
@@ -35,11 +37,12 @@ export class MostrarPacienteComponent implements OnInit {
   }
   getById() {
     let response;
+    
     this.pacienteService.getById(this.Id).subscribe((r) => {
       response = r;
       console.log(r);
       this.paciente = response.paciente;
-     
+       this.tipodocumento=this.paciente.persona.TipoDeIdentificacion;
 
     })
   }
