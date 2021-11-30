@@ -12,9 +12,9 @@ export class AgendarCitaComponent implements OnInit {
   first = 0;
 
   rows = 10;
-  personas:any[] = [];
+  personas: any[] = [];
   date8: Date;
-  fecha:string;
+  fecha: string;
   dias = {
     'lunes': [],
     'martes': [],
@@ -22,9 +22,9 @@ export class AgendarCitaComponent implements OnInit {
     'jueves': [],
     'viernes': [],
     'sabado': [],
-    'numero':[]
+    'numero': []
   };
-  constructor( private router: Router, private agendaService: AgendaService,) { }
+  constructor(private router: Router, private agendaService: AgendaService,) { }
 
   ngOnInit(): void {
   }
@@ -45,67 +45,72 @@ export class AgendarCitaComponent implements OnInit {
     return this.personas ? this.first === (this.personas.length - this.rows) : true;
   }
 
-  mostrar(){
-    this.fecha=this.date8.toLocaleDateString();
-    this.fecha=this.fecha.replace('/','_').replace('/','_');
-    let fechaBuscar=this.fecha.replace('_','/').replace('_','/');
-    this.convertDay(this.date8.getDay(), fechaBuscar);
-  } 
+  mostrar() {
+    if (this.date8.getDate() <= Date.now()) {
+      alert("La fecha no debe ser menor o igual a la actual")
+    } else {
+      this.fecha = this.date8.toLocaleDateString();
+      this.fecha = this.fecha.replace('/', '_').replace('/', '_');
+      let fechaBuscar = this.fecha.replace('_', '/').replace('_', '/');
+      this.convertDay(this.date8.getDay(), fechaBuscar);
+    }
+
+  }
 
 
-  convertDay(dia, fecha){
+  convertDay(dia, fecha) {
     var diaConslta;
-    if(dia==0){
+    if (dia == 0) {
       alert("No se puede apartar cita los domingos");
-    }else if (dia==1){
-      diaConslta="lunes";
-    } else if (dia==2){
-      diaConslta="martes";
-    } else if (dia==3){
-      diaConslta="miercoles";
-    } else if (dia==4){
-      diaConslta="jueves";
-    } else if (dia==5){
-      diaConslta="viernes"
-    } else if (dia==6){
-      diaConslta="sabado";
+    } else if (dia == 1) {
+      diaConslta = "lunes";
+    } else if (dia == 2) {
+      diaConslta = "martes";
+    } else if (dia == 3) {
+      diaConslta = "miercoles";
+    } else if (dia == 4) {
+      diaConslta = "jueves";
+    } else if (dia == 5) {
+      diaConslta = "viernes"
+    } else if (dia == 6) {
+      diaConslta = "sabado";
     }
     let res;
-    this.agendaService.get(diaConslta,fecha).subscribe(result => {
-      res=result;
-      this.asignarFecha(diaConslta,res.agendas );
+    this.agendaService.get(diaConslta, fecha).subscribe(result => {
+      res = result;
+      this.asignarFecha(diaConslta, res.agendas);
     })
   }
 
 
-  asignarFecha(diaConsulta, agendas : Agenda[]){
-    this.dias ={
+  asignarFecha(diaConsulta, agendas: Agenda[]) {
+    this.dias = {
       'lunes': [],
       'martes': [],
       'miercoles': [],
       'jueves': [],
       'viernes': [],
       'sabado': [],
-      'numero':[]
+      'numero': []
     };
-    if(diaConsulta=='lunes'){
-      this.dias.lunes=agendas;
-      this.dias.numero=agendas;
-    } else if(diaConsulta=='martes'){
-      this.dias.martes=agendas;
-      this.dias.numero=agendas;
-    } else if(diaConsulta=='miercoles'){
-      this.dias.miercoles=agendas;
-      this.dias.numero=agendas;
-    } else if(diaConsulta=='jueves'){
-      this.dias.jueves=agendas;
-      this.dias.numero=agendas;
-    } else if(diaConsulta=='viernes'){
-      this.dias.viernes=agendas;
-      this.dias.numero=agendas;
-    } else if(diaConsulta=='sabado'){
-      this.dias.sabado=agendas;
-      this.dias.numero=agendas;
+    if (diaConsulta == 'lunes') {
+      this.dias.lunes = agendas;
+      this.dias.numero = agendas;
+    } else if (diaConsulta == 'martes') {
+      this.dias.martes = agendas;
+      this.dias.numero = agendas;
+    } else if (diaConsulta == 'miercoles') {
+      this.dias.miercoles = agendas;
+      this.dias.numero = agendas;
+    } else if (diaConsulta == 'jueves') {
+      this.dias.jueves = agendas;
+      this.dias.numero = agendas;
+    } else if (diaConsulta == 'viernes') {
+      this.dias.viernes = agendas;
+      this.dias.numero = agendas;
+    } else if (diaConsulta == 'sabado') {
+      this.dias.sabado = agendas;
+      this.dias.numero = agendas;
     }
 
   }

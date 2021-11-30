@@ -11,4 +11,8 @@ export class Persona {
     foto : string
     correo : string
     telefono : string
+
+    constructor (){
+        TipoDeIdentificacion:"";
+    }
 }

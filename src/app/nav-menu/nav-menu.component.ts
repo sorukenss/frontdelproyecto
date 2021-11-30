@@ -28,7 +28,8 @@ export class NavMenuComponent {
     private authenticationService: AuthenticationService,
     private loginService: AuthenticationService
   ) {
-    
+    let currentUser = this.loginService.currentUserValue;
+    this.usuario= currentUser;
   }
 
   logout() {
@@ -138,7 +139,7 @@ export class NavMenuComponent {
       }, {
         label: 'Perfil',
         icon: 'pi pi-fw pi-book',
-        routerLink: ['/paciente-mostrar']
+        routerLink: ['/paciente-mostrar/'+this.usuario.idPersona]
       },
       {
           label: 'Cerrar Sesión',
@@ -174,7 +175,7 @@ export class NavMenuComponent {
         {
           label: 'Consultar Citas',
           icon: 'pi pi-fw pi-list',
-          routerLink: ['/consultar-cita']
+          routerLink: ['/consultar-cita-psicologo']
         },
         {
           label: 'Atender Citas',

@@ -12,8 +12,8 @@
                         <ng-template pTemplate="header">
                             <tr>
                                 <th scope="col">Codigo De La Cita </th>
-                                <th scope="col">Psicologo</th>
-                                <th scope="col">Tipo De Cita </th>
+                                <th scope="col">Id Paciente</th>
+                                <th scope="col">Paciente</th>
                                 <th scope="col">Fecha De Atención</th>
                                 <th scope="col">Hora De Atención</th>
                                 <th scope="col">Valor</th>
@@ -23,9 +23,9 @@
                         </ng-template>
                         <ng-template pTemplate="body" let-cita>
                             <tr>
-                                <td>{{cita.codigoCita}}</td>
-                                <td>{{cita.psicologo.persona.nombre}}</td>
-                                <td>{{cita.psicologo.especialidad.nombreEspecialidad}}</td>
+                                <td><a routerLink='/atender-cita/{{cita.codigoCita}}'>{{cita.codigoCita}}</a></td>
+                                <td>{{cita.paciente.codigoPaciente}}</td>
+                                <td>{{cita.paciente.persona.nombre}}</td>
                                 <td>{{cita.fecha}}</td>
                                 <td>{{cita.hora}}</td>
                                 <td>{{0}}</td>

@@ -57,7 +57,6 @@ export class RegistrarPsicologoComponent implements OnInit {
       this.Psicologo.persona = this.persona;
       this.Psicologo.especialidad = this.especialidad;
       this.Psicologo.agendas = this.agendas;
-      debugger
       this.psicologoService.post(this.Psicologo).subscribe((r) => {
         if (r != null) {
           a = r;
