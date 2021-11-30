@@ -36,3 +36,9 @@
       box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
       background-color:#f4acb7;
   }
+  .imagen{
+    width: 10;
+    height: 10%;
+    margin-right: 50;
+    
+  }
