@@ -31,5 +31,10 @@ export class CitaService {
     )
   }
 
+  getByCitas(): Observable<Citas[]> {
+    return this.http.get<Citas[]>(this.baseUrl + "api/Citas").pipe(
+      tap(() => console.log("Consultado correctamente"))
+    )
+  }
 
 }

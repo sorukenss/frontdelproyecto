@@ -44,10 +44,14 @@ export class ListaPacientesComponent implements OnInit {
   }
   delete(codigo : string){
    
-    this.pacienteService.delete(codigo).subscribe(r=>{
+    if(this.usuario.rol=="ADMINISTRADOR"){
+      this.pacienteService.delete(codigo).subscribe(r=>{
       
-      this.get();
-    })
+        this.get();
+      })
+    }
+    
+    
   }
 
   next() {
