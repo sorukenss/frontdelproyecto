@@ -1,6 +1,6 @@
 .footer-dark {
     padding:50px 0;
-    color:#d8e2dc;
+    color:black;
     font-family: 'Kalam', cursive;
     background-color:#9d8189;
   }
@@ -23,7 +23,7 @@
   }
   
   .footer-dark ul a {
-    color:#d8e2dc;
+    color: black;
     text-decoration:none;
     opacity:0.9;
   }
@@ -73,9 +73,9 @@
     display:inline-block;
     text-align:center;
     border-radius:50%;
-    box-shadow:0 0 0 1px rgba(255,255,255,0.4);
+    box-shadow:0 0 0 1px rgb(0, 0, 0);
     margin:0 8px;
-    color:white;
+    color:black;
     opacity:0.75;
   }
   
