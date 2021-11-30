@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { first } from 'rxjs/operators';
 import { ModalComponent } from 'src/app/@base/modal/modal.component';
@@ -17,7 +18,7 @@ export class LoginComponent implements OnInit {
   user: User;
   paciente : Paciente;
   persona: Persona;
-  constructor(private loginService: AuthenticationService, private modalService: NgbModal, private pacienteService: PacienteService) {
+  constructor(private loginService: AuthenticationService, private router: Router, private modalService: NgbModal, private pacienteService: PacienteService) {
     this.user= new User();
     this.paciente = new Paciente();
     this.persona = new Persona();
@@ -54,16 +55,15 @@ export class LoginComponent implements OnInit {
     })
   }
 
-
-  
-
-
   login(){
     this.loginService.login(this.user.password, this.user.User)
       .pipe(first())
       .subscribe(
         data => {
-          window.location.reload();
+          if(data!=null){
+            this.router.navigateByUrl("/");
+            window.location.reload();
+          }
         },
         error => {
           console.log(error.error);

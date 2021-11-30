@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Paciente } from 'src/app/models/paciente';
 import { Persona } from 'src/app/models/persona';
 import { User } from 'src/app/models/user';
@@ -16,7 +17,7 @@ export class CompletarRegistroComponent implements OnInit {
   paciente: Paciente;
   usuario: User;
   persona : Persona;
-  constructor(private pacienteService: PacienteService, private loginService: AuthenticationService,private formBuilder: FormBuilder) {
+  constructor(private pacienteService: PacienteService, private router: Router, private loginService: AuthenticationService,private formBuilder: FormBuilder) {
     let currentUser = this.loginService.currentUserValue;
     this.usuario=currentUser;
    }
@@ -34,68 +35,22 @@ export class CompletarRegistroComponent implements OnInit {
       console.log(r);
       this.paciente = response.paciente;
       this.persona=this.paciente.persona;
-      this.buildForm();
     })
   }
 
   update(){
+    debugger
     let response;
     this.paciente.codigoPaciente=this.paciente.persona.identification;
-    this.pacienteService.update(this.paciente).subscribe(r=>{
+    this.pacienteService.update(this.paciente).subscribe((r)=>{
       response=r
-    })
-  }
-
-  onSubmit() {
-    if (this.formGroup.invalid) {
-      return;
-    }
-    this.update();
-  }
-  private buildForm() {
-     
-    this.persona.identification = this.usuario.idPersona;
-    this.persona.nombre = '';
-    this.persona.apellido = '';
-    this.persona.correo = '';
-    this.persona.direccion = '';
-    this.persona.edad = 0;
-    this.persona.passwordd = this.usuario.password;
-    this.persona.sexo = '';
-    this.persona.telefono = '';
-    debugger
-    this.persona.usuario = this.usuario.User;
-    this.formGroup = this.formBuilder.group({
-      identification: [this.persona.identification, Validators.required],
-      nombre: [this.persona.nombre, Validators.required],
-      apellido: [this.persona.apellido, Validators.required],
-      correo: [this.persona.correo, Validators.required],
-      direccion: [this.persona.direccion, Validators.required],
-      edad: [this.persona.edad, [Validators.required, CompletarRegistroComponent.validationEdad ]],
-      password: [this.persona.passwordd, Validators.required],
-      sexo: [this.persona.sexo, Validators.required],
-      telefono: [this.persona.telefono, Validators.required,Validators.maxLength(10)],
-      usuario: [this.persona.usuario, Validators.required],
-    })
-     
-    
-     
-    
-  }
+      this.usuario.estado="COMPLETO";
+      debugger
+      sessionStorage.setItem('login', JSON.stringify(this.usuario));
+      this.router.navigateByUrl("");
+      window.location.reload();
+    });
    
-  get control() {
-    return this.formGroup.controls;
   }
-
-  private static validationEdad(control:AbstractControl){
-     
-    const edad=control.value;
-    if(edad<=0 || edad>=100){
-      return{validEdad:true, messageEdad:"Edad invalidad(1-99)"};
-    }
-    return {validEdad: false, messageEdad:"Edad valida"};
-  }
-
-
 
 }

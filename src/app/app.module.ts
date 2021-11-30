@@ -93,6 +93,7 @@ import { AgendapipePipe } from './pipes/agendapipe.pipe';
 import { LoginComponent } from './Components/login/login.component';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/compiler';
 import { CompletarRegistroComponent } from './pacientes/completar-registro/completar-registro.component';
+import { ConsultarCitasPacienteComponent } from './Citas/consultar-citas-paciente/consultar-citas-paciente.component';
 
 
 @NgModule({
@@ -125,6 +126,7 @@ import { CompletarRegistroComponent } from './pacientes/completar-registro/compl
     AgendapipePipe,
     LoginComponent,
     CompletarRegistroComponent,
+    ConsultarCitasPacienteComponent,
 
   ],
   imports: [

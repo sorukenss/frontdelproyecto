@@ -33,6 +33,7 @@ export class NavMenuComponent {
 
   logout() {
     this.authenticationService.logout();
+    this.router.navigateByUrl("/home");
     window.location.reload();
   }
 
@@ -131,7 +132,7 @@ export class NavMenuComponent {
         {
           label: 'Consultar Citas',
           icon: 'pi pi-fw pi-list',
-          routerLink: ['/consultar-cita']
+          routerLink: ['/consultar-cita-paciente']
         }
         ]
       }, {

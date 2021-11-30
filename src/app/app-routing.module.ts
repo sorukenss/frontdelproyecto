@@ -21,6 +21,7 @@ import { VerHistoriaComponent } from './historial/ver-historia/ver-historia.comp
 import { AtenderCitasComponent } from './Citas/atender-citas/atender-citas.component';
 import { LoginComponent } from './Components/login/login.component';
 import { AuthGuard } from './services/guards/auth.guard';
+import { ConsultarCitasPacienteComponent } from './Citas/consultar-citas-paciente/consultar-citas-paciente.component';
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
   { path: 'counter', component: CounterComponent },
@@ -40,6 +41,7 @@ const routes: Routes = [
   {path:'ver-historia', component:VerHistoriaComponent},
   {path:'atender-cita', component:AtenderCitasComponent},
   {path:'login', component:LoginComponent},
+  {path:'consultar-cita-paciente',component:ConsultarCitasPacienteComponent},
 
 ];
 

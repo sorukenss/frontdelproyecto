@@ -57,6 +57,7 @@ export class RegistrarPsicologoComponent implements OnInit {
       this.Psicologo.persona = this.persona;
       this.Psicologo.especialidad = this.especialidad;
       this.Psicologo.agendas = this.agendas;
+      debugger
       this.psicologoService.post(this.Psicologo).subscribe((r) => {
         if (r != null) {
           a = r;
@@ -175,7 +176,7 @@ export class RegistrarPsicologoComponent implements OnInit {
       correo: [this.persona.correo, Validators.required],
       direccion: [this.persona.direccion, Validators.required],
       edad: [this.persona.edad, [Validators.required, RegistrarPsicologoComponent.validationEdad ]],
-      password: [this.persona.passwordd, Validators.required],
+      passwordd: [this.persona.passwordd, Validators.required],
       sexo: [this.persona.sexo, Validators.required],
       telefono: [this.persona.telefono, Validators.required,Validators.maxLength(10)],
       usuario: [this.persona.usuario, Validators.required],

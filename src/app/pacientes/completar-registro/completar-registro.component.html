@@ -17,7 +17,7 @@
                                         <option value="PAS">PAS</option>
                                         <option value="CCE">CCE</option>
                                     </select>
-                                    <input type="text"  class="form-control identification" value="{{paciente.codigoPaciente}}">
+                                    <input type="text"  class="form-control identification" disabled value="{{paciente.codigoPaciente}}">
                                 </div>
 
                             </div>
@@ -47,11 +47,11 @@
                         <div class="row">
                             <div class="col">
                                 <label>Usuario</label>
-                                <input type="text" [(ngModel)]="persona.usuario" name="user">
+                                <input type="text" disabled [value]="persona.usuario" name="user">
                             </div>
                             <div class="col">
                                 <label>Contraseña</label>
-                                <input type="text" [(ngModel)]="persona.passwordd" name="pass">
+                                <input type="text" disabled [value]="persona.passwordd" name="pass">
                             </div>
                         </div>
                     </div>
