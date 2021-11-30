@@ -25,5 +25,11 @@ export class CitaService {
     )
   }
 
+  getByPsicologoId(id: string): Observable<Citas[]> {
+    return this.http.get<Citas[]>(this.baseUrl + "api/Cita/psicologo?id="+id).pipe(
+      tap(() => console.log("Consultado correctamente"))
+    )
+  }
+
 
 }

@@ -13,7 +13,6 @@ export class AppComponent {
   constructor(private loginService: AuthenticationService) {
     let currentUser = this.loginService.currentUserValue;
     if (currentUser) {
-      debugger
       this.usuario = currentUser;
       if(this.usuario.estado=="INCOMPLETO"){
         this.cond=true;

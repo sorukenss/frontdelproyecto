@@ -94,6 +94,7 @@ import { LoginComponent } from './Components/login/login.component';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/compiler';
 import { CompletarRegistroComponent } from './pacientes/completar-registro/completar-registro.component';
 import { ConsultarCitasPacienteComponent } from './Citas/consultar-citas-paciente/consultar-citas-paciente.component';
+import { ConsultarCitasPsicologoComponent } from './Citas/consultar-citas-psicologo/consultar-citas-psicologo.component';
 
 
 @NgModule({
@@ -127,6 +128,7 @@ import { ConsultarCitasPacienteComponent } from './Citas/consultar-citas-pacient
     LoginComponent,
     CompletarRegistroComponent,
     ConsultarCitasPacienteComponent,
+    ConsultarCitasPsicologoComponent,
 
   ],
   imports: [

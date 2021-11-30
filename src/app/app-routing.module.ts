@@ -22,6 +22,7 @@ import { AtenderCitasComponent } from './Citas/atender-citas/atender-citas.compo
 import { LoginComponent } from './Components/login/login.component';
 import { AuthGuard } from './services/guards/auth.guard';
 import { ConsultarCitasPacienteComponent } from './Citas/consultar-citas-paciente/consultar-citas-paciente.component';
+import { ConsultarCitasPsicologoComponent } from './Citas/consultar-citas-psicologo/consultar-citas-psicologo.component';
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
   { path: 'counter', component: CounterComponent },
@@ -39,9 +40,10 @@ const routes: Routes = [
   {path:'mostrar-psicologo/:id', component:MostrarPsicologoComponent},
   {path:'ver-historial', component:VerHistorialComponent},
   {path:'ver-historia', component:VerHistoriaComponent},
-  {path:'atender-cita', component:AtenderCitasComponent},
+  {path:'atender-cita/:id', component:AtenderCitasComponent},
   {path:'login', component:LoginComponent},
   {path:'consultar-cita-paciente',component:ConsultarCitasPacienteComponent},
+  {path:'consultar-cita-psicologo',component:ConsultarCitasPsicologoComponent},
 
 ];
 

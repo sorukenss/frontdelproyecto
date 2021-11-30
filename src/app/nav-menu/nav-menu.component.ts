@@ -174,7 +174,7 @@ export class NavMenuComponent {
         {
           label: 'Consultar Citas',
           icon: 'pi pi-fw pi-list',
-          routerLink: ['/consultar-cita']
+          routerLink: ['/consultar-cita-psicologo']
         },
         {
           label: 'Atender Citas',

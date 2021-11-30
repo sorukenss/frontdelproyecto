@@ -4,12 +4,11 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
 import { CitaService } from 'src/app/services/cita.service';
 
 @Component({
-  selector: 'app-consultar-citas-paciente',
-  templateUrl: './consultar-citas-paciente.component.html',
-  styleUrls: ['./consultar-citas-paciente.component.css']
+  selector: 'app-consultar-citas-psicologo',
+  templateUrl: './consultar-citas-psicologo.component.html',
+  styleUrls: ['./consultar-citas-psicologo.component.css']
 })
-export class ConsultarCitasPacienteComponent implements OnInit {
-
+export class ConsultarCitasPsicologoComponent implements OnInit {
   first = 0;
 
   rows = 10;
@@ -17,12 +16,12 @@ export class ConsultarCitasPacienteComponent implements OnInit {
   citas : Citas[] = [];
   constructor(private citaService:CitaService, private loginService: AuthenticationService) {
     
-   }
+  }
 
   ngOnInit(): void {
     let currentUser=this.loginService.currentUserValue;
     let response;
-    this.citaService.getByPacienteId(currentUser.idPersona).subscribe(r => {
+    this.citaService.getByPsicologoId(currentUser.idPersona).subscribe(r => {
       response = r;
       this.citas = response.citas;
     })
