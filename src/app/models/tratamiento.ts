@@ -4,5 +4,5 @@ export class Tratamiento{
     codigoTratamiento : string
     recomendacion: string
     diagnostico : string
-    medicamentos : Medicamento
+    medicamentos : Medicamento[]
 }

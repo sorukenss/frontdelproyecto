@@ -11,19 +11,31 @@
                                     <div class="row">
                                         <div class="col" style="margin-left: 3px" style="font-style:italic">
                                             <label for=""><b>Link Reunión:</b></label>
-                                            <input type="text"  name="linkreunion" [(ngModel)]="link">
+                                            <input type="text" name="linkreunion" [(ngModel)]="link">
                                         </div>
-                                        
+                                        <div class="col">
+                                            <button  pButton pRipple type="button" (click)="send()" pTooltip="Enviar enlace"
+                                                tooltipPosition="right" class="p-button-rounded p-button-success">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                    fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z" />
+
+                                                </svg></button>
+
+                                        </div>
+
                                     </div>
                                     <div class="row">
-                                        <div class="col" style="margin-left: 3px" style="font-style:italic">
+                                        <div class="col" style="margin-left: 3px;" style="font-style:italic">
+                                            <br>
                                             <label for=""><b>Identificación:</b></label>
-                                            <input type="text" disabled name="identificacion">
+                                            <input type="text" disabled [(ngModel)]="this.paciente.codigoPaciente" name="identificacion">
                                         </div>
                                         <div class="col" style="margin-left: 3px" style="font-style:italic">
                                             <label><b>Nombre:</b></label>
                                             <div>
-                                                <input type="text" disabled name="nombres">
+                                                <input type="text" [(ngModel)]="this.paciente.persona.nombre" disabled name="nombres">
                                             </div>
 
                                         </div>
@@ -80,7 +92,7 @@
                         <div class="row">
 
                             <div class="col">
-                                <textarea type="text" class="text-diagnostico" name="Diagnostico"></textarea>
+                                <textarea type="text" class="text-diagnostico" [(ngModel)]="this.tratamiento.diagnostico" name="Diagnostico"></textarea>
                             </div>
 
                         </div>
@@ -89,17 +101,21 @@
                         <div class="card-body">
 
                             <label id="RegistroTratamiento" for="">Medicamento</label>
-                            <input type="text" placeholder="Medicamento" id="inputRegistroTratamiento"
+                            <input type="text" placeholder="Medicamento" [(ngModel)]="this.medicamento.nombre" id="inputRegistroTratamiento"
                                 name="Medicamento">
                             <label id="RegistroTratamiento">Horario</label>
-                            <input type="text" placeholder="Horario" id="inputRegistroTratamiento" name="Hora">
+                            <input type="text" placeholder="Horario" id="hora" [(ngModel)]="this.medicamento.HoraDeTomar " name="Hora">
 
                             <div class="mb-3">
                                 <label name="RegistroTratamiento">Recomendaciones</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                <textarea class="form-control" [(ngModel)]="this.medicamento.Instrucciones " id="exampleFormControlTextarea1" rows="3"></textarea>
                             </div>
                             <div style="margin-left: 40%; margin-top: 10px; margin-bottom: -10px">
-                                <button pButton pRipple type="button" label="Registrar tratamiento"
+                                <button pButton pRipple (click)="revisar()" type="button" label="Registrar tratamiento"
+                                    class="p-button-rounded p-button-help"></button>
+                            </div>
+                            <div style="margin-left: 40%; margin-top: 10px; margin-bottom: -10px">
+                                <button pButton pRipple (click)="agregarMedicamento()" type="button" label="Registrar Medicamento"
                                     class="p-button-rounded p-button-help"></button>
                             </div>
                         </div>
