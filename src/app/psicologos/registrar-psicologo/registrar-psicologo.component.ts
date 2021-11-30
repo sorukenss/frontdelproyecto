@@ -78,7 +78,7 @@ export class RegistrarPsicologoComponent implements OnInit {
 
   validate() {
     if (this.agendas.length < 8) {
-      return false;
+      return true;
     }
     return false;
   }
@@ -156,7 +156,7 @@ export class RegistrarPsicologoComponent implements OnInit {
     this.Psicologo = new psicologo();
     this.persona = new Persona();
     this.especialidad = new Especialidad();
-
+    this.persona.TipoDeIdentificacion='CC';
     this.especialidad.nombreEspecialidad = "";
     this.persona.identification = "";
     this.persona.nombre = '';

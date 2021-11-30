@@ -2,12 +2,19 @@
     <form action="">
         <div>
             <div class="card"
-                style="width: 50rem; margin-left: 180px; margin-top: 7%; margin-bottom:10px; box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4)">
+                style="width: 60rem; margin-left: 180px; margin-top: 7%; margin-bottom:10px; box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4)">
                 <mat-tab-group>
                     <mat-tab label="Informacion del paciente">
                         <div>
                             <form action="">
                                 <div>
+                                    <div class="row">
+                                        <div class="col" style="margin-left: 3px" style="font-style:italic">
+                                            <label for=""><b>Link Reunión:</b></label>
+                                            <input type="text"  name="linkreunion" [(ngModel)]="link">
+                                        </div>
+                                        
+                                    </div>
                                     <div class="row">
                                         <div class="col" style="margin-left: 3px" style="font-style:italic">
                                             <label for=""><b>Identificación:</b></label>
@@ -79,7 +86,7 @@
                         </div>
                     </mat-tab>
                     <mat-tab label="Tratamiento">
-                        <div class="card-body" >
+                        <div class="card-body">
 
                             <label id="RegistroTratamiento" for="">Medicamento</label>
                             <input type="text" placeholder="Medicamento" id="inputRegistroTratamiento"
@@ -92,10 +99,11 @@
                                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                             </div>
                             <div style="margin-left: 40%; margin-top: 10px; margin-bottom: -10px">
-                                <button pButton pRipple type="button" label="Registrar tratamiento" class="p-button-rounded p-button-help"></button>
+                                <button pButton pRipple type="button" label="Registrar tratamiento"
+                                    class="p-button-rounded p-button-help"></button>
                             </div>
                         </div>
-                       
+
 
                     </mat-tab>
                 </mat-tab-group>

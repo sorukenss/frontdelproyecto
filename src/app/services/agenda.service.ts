@@ -14,9 +14,9 @@ export class AgendaService {
   baseUrl=ruta;
   constructor(private http: HttpClient,private handleErrorService: HandleHttpErrorService) { }
 
-  get(dia:string, fecha:string):Observable<Agenda[]>{
+  get(dia:string, fecha:string, especialidad:string):Observable<Agenda[]>{
 
-    return this.http.get<Agenda[]>(this.baseUrl+"api/Agenda/dia?dia="+dia+"&fecha="+fecha).pipe(
+    return this.http.get<Agenda[]>(this.baseUrl+"api/Agenda/dia?dia="+dia+"&fecha="+fecha+"&especialidad="+especialidad).pipe(
       tap(()=>console.log("Consultado correctamente"))
     )
   }

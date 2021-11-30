@@ -21,6 +21,7 @@ export class AtenderCitasComponent implements OnInit {
 
   rows = 10;
   historial:any[] = [];
+  link : '';
   
 
   ngOnInit(): void {

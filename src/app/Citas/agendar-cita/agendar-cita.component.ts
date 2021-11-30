@@ -15,6 +15,7 @@ export class AgendarCitaComponent implements OnInit {
   personas: any[] = [];
   date8: Date;
   fecha: string;
+  especialidad = '';
   dias = {
     'lunes': [],
     'martes': [],
@@ -46,13 +47,21 @@ export class AgendarCitaComponent implements OnInit {
   }
 
   mostrar() {
-    if (this.date8.getDate() <= Date.now()) {
+    debugger
+    console.log(this.date8.getTime());
+    console.log(Date.now());
+    if (this.date8.getTime() <= Date.now()) {
       alert("La fecha no debe ser menor o igual a la actual")
     } else {
-      this.fecha = this.date8.toLocaleDateString();
-      this.fecha = this.fecha.replace('/', '_').replace('/', '_');
-      let fechaBuscar = this.fecha.replace('_', '/').replace('_', '/');
-      this.convertDay(this.date8.getDay(), fechaBuscar);
+      if (this.especialidad != '') {
+        this.fecha = this.date8.toLocaleDateString();
+        this.fecha = this.fecha.replace('/', '_').replace('/', '_');
+        let fechaBuscar = this.fecha.replace('_', '/').replace('_', '/');
+        this.convertDay(this.date8.getDay(), fechaBuscar);
+      }else{
+        alert("Seleccione una especialidad")
+      }
+
     }
 
   }
@@ -76,7 +85,7 @@ export class AgendarCitaComponent implements OnInit {
       diaConslta = "sabado";
     }
     let res;
-    this.agendaService.get(diaConslta, fecha).subscribe(result => {
+    this.agendaService.get(diaConslta, fecha, this.especialidad).subscribe(result => {
       res = result;
       this.asignarFecha(diaConslta, res.agendas);
     })
