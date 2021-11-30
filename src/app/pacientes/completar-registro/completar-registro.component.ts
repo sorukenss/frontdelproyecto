@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ModalComponent } from 'src/app/@base/modal/modal.component';
 import { Paciente } from 'src/app/models/paciente';
 import { Persona } from 'src/app/models/persona';
 import { User } from 'src/app/models/user';
@@ -17,7 +19,7 @@ export class CompletarRegistroComponent implements OnInit {
   paciente: Paciente;
   usuario: User;
   persona : Persona;
-  constructor(private pacienteService: PacienteService, private router: Router, private loginService: AuthenticationService,private formBuilder: FormBuilder) {
+  constructor(private pacienteService: PacienteService, private modalService: NgbModal,private router: Router, private loginService: AuthenticationService,private formBuilder: FormBuilder) {
     let currentUser = this.loginService.currentUserValue;
     this.usuario=currentUser;
    }
@@ -46,6 +48,9 @@ export class CompletarRegistroComponent implements OnInit {
       this.usuario.estado="COMPLETO";
       sessionStorage.setItem('login', JSON.stringify(this.usuario));
       this.router.navigateByUrl("");
+      const messageBox = this.modalService.open(ModalComponent);
+          messageBox.componentInstance.title = "Resultado";
+          messageBox.componentInstance.cuerpo = "Info: " + response.mensaje;
       window.location.reload();
     });
    
