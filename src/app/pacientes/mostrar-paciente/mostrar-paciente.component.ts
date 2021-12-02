@@ -47,7 +47,7 @@ export class MostrarPacienteComponent implements OnInit {
     })
   }
   open() {
-    this.router.navigateByUrl("/ver-historial");
+    this.router.navigateByUrl("/ver-historial/"+this.paciente.codigoPaciente);
   }
   delete(codigo: string) {
     let response;
