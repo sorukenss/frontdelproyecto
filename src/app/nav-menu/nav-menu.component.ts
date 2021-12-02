@@ -91,7 +91,7 @@ export class NavMenuComponent {
         icon: 'pi pi-fw pi-wallet',
         items: [{
           label: 'Ver Utilidades',
-          icon: 'pi pi-fw pi-chart-line',
+          icon: 'pi pi-fw pi-dollar',
           routerLink: ['/consultar-utilidad']
         },
         ]
@@ -176,16 +176,11 @@ export class NavMenuComponent {
           label: 'Consultar Citas',
           icon: 'pi pi-fw pi-list',
           routerLink: ['/consultar-cita-psicologo']
-        },
-        {
-          label: 'Atender Citas',
-          icon: 'pi pi-fw pi-list',
-          routerLink: ['/atender-cita']
         }
         ]
       }, {
         label: 'Tratamiento',
-        icon: 'pi pi-fw pi-book',
+        icon: 'pi pi-fw pi-folder',
         items: [
           {
             label: 'Consultar Tratamiento',
@@ -195,7 +190,7 @@ export class NavMenuComponent {
         ]
       },{
         label: 'Cerrar Sesión',
-        icon: 'pi pi-fw pi-list',
+        icon: 'pi pi-fw pi-minus-circle',
         command: e => this.logout()
     }
     ];
