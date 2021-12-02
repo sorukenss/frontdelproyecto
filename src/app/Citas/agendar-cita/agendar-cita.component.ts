@@ -47,7 +47,7 @@ export class AgendarCitaComponent implements OnInit {
   }
 
   mostrar() {
-    debugger
+   
     console.log(this.date8.getTime());
     console.log(Date.now());
     if (this.date8.getTime() <= Date.now()) {

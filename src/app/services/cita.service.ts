@@ -6,6 +6,7 @@ import { HandleHttpErrorService } from '../@base/handle-http-error-service.servi
 import { Agenda } from '../models/agenda';
 import { Citas } from '../models/citas';
 import { environment } from 'src/environments/environment';
+import { Correo } from '../models/correo';
 const ruta = environment.ruta;
 @Injectable({
   providedIn: 'root'
@@ -30,11 +31,23 @@ export class CitaService {
       tap(() => console.log("Consultado correctamente"))
     )
   }
+  atender(cita: Citas): Observable<Citas> {
+    return this.http.post<Citas>(this.baseUrl + "api/Cita/Atender", cita).pipe(
+      tap(_ => this.handleErrorService.handleError<Citas>("Cita apartada", null)));
+  }
 
-  getByCitas(): Observable<Citas[]> {
-    return this.http.get<Citas[]>(this.baseUrl + "api/Citas").pipe(
+
+
+  sendEmail(correo: Correo): Observable<Citas> {
+    return this.http.post<Citas>(this.baseUrl + "api/Cita/correo", correo).pipe(
+      tap(_ => this.handleErrorService.handleError<Citas>("Cita apartada", null)));
+  }
+  
+  getById(id: string): Observable<Citas[]> {
+    return this.http.get<Citas[]>(this.baseUrl + "api/Cita/id?id="+id).pipe(
       tap(() => console.log("Consultado correctamente"))
     )
   }
+
 
 }

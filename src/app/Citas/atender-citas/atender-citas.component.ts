@@ -81,7 +81,7 @@ export class AtenderCitasComponent implements OnInit {
     this.cita.duracion=10;
     this.cita.psicologo=this.psicologo;
     this.cita.paciente=this.paciente;
-    debugger
+   
     this.citaService.atender(this.cita).subscribe((r) => {
       response = r;
       const messageBox = this.modalService.open(ModalComponent);
@@ -97,7 +97,7 @@ export class AtenderCitasComponent implements OnInit {
       this.paciente=response.cita.paciente;
       this.psicologo=response.cita.psicologo;
       this.cita=response.cita;
-      debugger
+      
     })
   }
 
