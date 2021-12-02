@@ -13,6 +13,8 @@ import { Medicamento } from 'src/app/models/medicamento';
 import { psicologo } from 'src/app/models/psicologo';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalComponent } from 'src/app/@base/modal/modal.component';
+import { Historial } from 'src/app/models/historial';
+import { HistorialServiceService } from 'src/app/services/historialservice.service';
 @Component({
   selector: 'app-atender-citas',
   templateUrl: './atender-citas.component.html',
@@ -24,7 +26,7 @@ export class AtenderCitasComponent implements OnInit {
 
   activeState: boolean[] = [true, false, false];
 
-  constructor(private messageService: MessageService, private modalService: NgbModal,private routeActive: ActivatedRoute,private router: Router, private citaService: CitaService) { }
+  constructor(private messageService: MessageService, private historialService: HistorialServiceService,private modalService: NgbModal,private routeActive: ActivatedRoute,private router: Router, private citaService: CitaService) { }
 
   
   first = 0;
@@ -40,6 +42,8 @@ export class AtenderCitasComponent implements OnInit {
   medicamento: Medicamento;
   medicamentos: Medicamento[] = [];
   psicologo: psicologo;
+  historiall : Historial;
+  citas : Citas[] = []
   ngOnInit(): void {
     const id = this.routeActive.snapshot.params.id;
     this.Id = id;
@@ -55,7 +59,7 @@ export class AtenderCitasComponent implements OnInit {
     ]
   }
   open(){
-    this.router.navigateByUrl("/ver-historia");
+    this.router.navigateByUrl("/ver-historia/"+this.historiall.codigo);
   }
 
   send(){
@@ -74,6 +78,17 @@ export class AtenderCitasComponent implements OnInit {
     alert("Medicamento agregado");
   }
 
+  getHistoriales(){
+    debugger
+    let response;
+    this.historialService.getHistoriales(this.paciente.codigoPaciente).subscribe((r) => {
+      response = r;
+      this.historiall=response.historial;
+      debugger
+      this.citas=response.historial.citas;
+    })
+  }
+
   revisar(){
     let response;
     this.tratamiento.medicamentos=this.medicamentos;
@@ -81,7 +96,6 @@ export class AtenderCitasComponent implements OnInit {
     this.cita.duracion=10;
     this.cita.psicologo=this.psicologo;
     this.cita.paciente=this.paciente;
-   
     this.citaService.atender(this.cita).subscribe((r) => {
       response = r;
       const messageBox = this.modalService.open(ModalComponent);
@@ -97,8 +111,11 @@ export class AtenderCitasComponent implements OnInit {
       this.paciente=response.cita.paciente;
       this.psicologo=response.cita.psicologo;
       this.cita=response.cita;
-      
+      debugger
+      this.getHistoriales();
     })
+    
+    
   }
 
 

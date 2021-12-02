@@ -5,8 +5,8 @@
                 style="width: 50rem; margin-left: 180px; margin-top: 7%;  box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4)">
                 <div class="card-body">
                     <h5>Historia Clínica</h5>
-                    <p-table [value]="historial" [paginator]="true" [rows]="10" [showCurrentPageReport]="true"
-                        responsiveLayout="scroll"
+                    <p-table [value]="citas" [paginator]="true" [rows]="10"
+                        [showCurrentPageReport]="true" responsiveLayout="scroll"
                         currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
                         [rowsPerPageOptions]="[1,2,3]">
                         <ng-template pTemplate="header">
@@ -16,15 +16,17 @@
                                 <th>Causa</th>
                             </tr>
                         </ng-template>
-                        <ng-template pTemplate="body" let-h>
+                        <ng-template pTemplate="body" let-c>
 
                             <tr>
-                                <td>{{h.fecha}}</td>
-                                <td>{{h.doctor}}</td>
-                                <td>{{h.causa}}</td>
+                                <td>{{c.fecha}}</td>
+                                <td>{{c.psicologo.persona.nombre}}</td>
+                                <td>{{c.motivo}}</td>
                                 <td>
-                                    <button pButton pRipple type="button" (click)="open()" icon="pi pi-arrow-circle-right" pTooltip="Apartar cita" tooltipPosition="right"
-                                     class="p-button-rounded p-button-info"></button>
+                                    <button pButton pRipple type="button"
+                                        (click)="open()" disabled icon="pi pi-arrow-circle-right"
+                                        pTooltip="Ver Info" tooltipPosition="right"
+                                        class="p-button-rounded p-button-info"></button>
                                 </td>
                             </tr>
                         </ng-template>

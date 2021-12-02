@@ -43,10 +43,10 @@
                                     <div class="row">
                                         <div>
                                             <div class="card"
-                                                style="width: 45rem;height:40rem margin-left:5% ;  margin-top: 7%; margin-bottom:10px; box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4)">
+                                                style="width: 45rem; margin-left:5% ;  margin-top: 7%; margin-bottom:10px; box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4)">
                                                 <div class="card-body">
                                                     <h5>Historia Clínica</h5>
-                                                    <p-table [value]="historial" [paginator]="true" [rows]="10"
+                                                    <p-table [value]="citas" [paginator]="true" [rows]="10"
                                                         [showCurrentPageReport]="true" responsiveLayout="scroll"
                                                         currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
                                                         [rowsPerPageOptions]="[1,2,3]">
@@ -57,16 +57,16 @@
                                                                 <th>Causa</th>
                                                             </tr>
                                                         </ng-template>
-                                                        <ng-template pTemplate="body" let-h>
+                                                        <ng-template pTemplate="body" let-c>
 
                                                             <tr>
-                                                                <td>{{h.fecha}}</td>
-                                                                <td>{{h.doctor}}</td>
-                                                                <td>{{h.causa}}</td>
+                                                                <td>{{c.fecha}}</td>
+                                                                <td>{{c.psicologo.persona.nombre}}</td>
+                                                                <td>{{c.motivo}}</td>
                                                                 <td>
                                                                     <button pButton pRipple type="button"
-                                                                        (click)="open()" icon="pi pi-arrow-circle-right"
-                                                                        pTooltip="Apartar cita" tooltipPosition="right"
+                                                                        (click)="open()" disabled icon="pi pi-arrow-circle-right"
+                                                                        pTooltip="Ver Info" tooltipPosition="right"
                                                                         class="p-button-rounded p-button-info"></button>
                                                                 </td>
                                                             </tr>
@@ -98,7 +98,7 @@
                         </div>
                     </mat-tab>
                     <mat-tab label="Tratamiento">
-                        <div class="card-body" style="height:20rem">
+                        <div class="card-body">
 
                             <label id="RegistroTratamiento" for="">Medicamento</label>
                             <input type="text" placeholder="Medicamento" [(ngModel)]="this.medicamento.nombre" id="inputRegistroTratamiento"
@@ -110,16 +110,14 @@
                                 <label name="RegistroTratamiento">Recomendaciones</label>
                                 <textarea class="form-control" [(ngModel)]="this.medicamento.Instrucciones " id="exampleFormControlTextarea1" rows="3"></textarea>
                             </div>
-                            <div>
-                            <div style="margin-left: 40%; margin-top: 10px; margin-bottom: -10px;position:absolute; top:240px;"  id="guardartratamiento">
+                            <div style="margin-left: 40%; margin-top: 10px; margin-bottom: -10px">
                                 <button pButton pRipple (click)="revisar()" type="button" label="Registrar tratamiento"
                                     class="p-button-rounded p-button-help"></button>
                             </div>
-                            <div style="margin-left: 40%; margin-top: 10px; margin-bottom: -10px;position:absolute;top:240px; left:-200px;" id="guardarmedicamento">
+                            <div style="margin-left: 40%; margin-top: 10px; margin-bottom: -10px">
                                 <button pButton pRipple (click)="agregarMedicamento()" type="button" label="Registrar Medicamento"
                                     class="p-button-rounded p-button-help"></button>
                             </div>
-                          </div>
                         </div>
 
 
