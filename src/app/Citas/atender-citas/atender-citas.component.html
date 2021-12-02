@@ -110,14 +110,16 @@
                                 <label name="RegistroTratamiento">Recomendaciones</label>
                                 <textarea class="form-control" [(ngModel)]="this.medicamento.Instrucciones " id="exampleFormControlTextarea1" rows="3"></textarea>
                             </div>
-                            <div style="margin-left: 40%; margin-top: 10px; margin-bottom: -10px">
+                            <div>
+                            <div style="margin-left: 40%; margin-top: 10px; margin-bottom: -10px;position:absolute; top:240px;"  id="guardartratamiento">
                                 <button pButton pRipple (click)="revisar()" type="button" label="Registrar tratamiento"
                                     class="p-button-rounded p-button-help"></button>
                             </div>
-                            <div style="margin-left: 40%; margin-top: 10px; margin-bottom: -10px">
+                            <div style="margin-left: 40%; margin-top: 10px; margin-bottom: -10px;position:absolute;top:240px; left:-200px;" id="guardarmedicamento">
                                 <button pButton pRipple (click)="agregarMedicamento()" type="button" label="Registrar Medicamento"
                                     class="p-button-rounded p-button-help"></button>
                             </div>
+                          </div>
                         </div>
 
 

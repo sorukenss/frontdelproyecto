@@ -42,7 +42,7 @@ export class MostrarPacienteComponent implements OnInit {
       response = r;
       console.log(r);
       this.paciente = response.paciente;
-       this.tipodocumento=this.paciente.persona.TipoDeIdentificacion;
+       this.tipodocumento=this.paciente.persona.tipoDeIdentificacion;
 
     })
   }

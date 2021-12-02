@@ -156,7 +156,7 @@ export class RegistrarPsicologoComponent implements OnInit {
     this.Psicologo = new psicologo();
     this.persona = new Persona();
     this.especialidad = new Especialidad();
-    this.persona.TipoDeIdentificacion='CC';
+    this.persona.tipoDeIdentificacion='CC';
     this.especialidad.nombreEspecialidad = "";
     this.persona.identification = "";
     this.persona.nombre = '';

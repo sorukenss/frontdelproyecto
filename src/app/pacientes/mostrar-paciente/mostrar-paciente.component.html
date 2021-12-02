@@ -11,14 +11,16 @@
                                 <div class="col">
                                     <label for="">Identificación</label>
                                     <div class="input-group mb-3">
-                                        <select name="TipoDeIdentificacion" style="width:5px; height:35px;" (value)="paciente.persona.TipoDeIdentificacion"  class="form-select"
+                                        <div class="input-group mb-3">
+                                            <select name="sexo" style="width:5px; height:35px;" [value]="paciente.persona.tipoDeIdentificacion "  class="form-select"
                                             aria-label="Default select example">
-                                            <option value="CC">CC</option>
                                             <option value="TI">TI</option>
+                                            <option value="CC">CC</option>
                                             <option value="PAS">PAS</option>
                                             <option value="CCE">CCE</option>
-                                        </select>
-                                        <input type="text"  class="form-control identification" disabled value="{{paciente.codigoPaciente}}">
+                                            </select>
+                                            <input type="text"   class="form-control identification" disabled value="{{paciente.codigoPaciente}}">
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col">
@@ -47,11 +49,11 @@
                             <div class="row">
                                 <div class="col">
                                     <label>Usuario</label>
-                                    <input type="text" [(ngModel)]=" paciente.persona.usuario" name="user" >
+                                    <input type="text" disabled [(ngModel)]=" paciente.persona.usuario" name="user" >
                                 </div>
                                 <div class="col">
                                     <label>Contraseña</label>
-                                    <input type="text" [(ngModel)]=" paciente.persona.passwordd" name="pass" >
+                                    <input type="text" disabled [(ngModel)]=" paciente.persona.passwordd" name="pass" >
     
                                 </div>
                             </div>
@@ -106,19 +108,21 @@
                                 <div class="col">
                                     <label for="">Identificación</label>
                                     <div class="input-group mb-3">
-                                        <select name="sexo" disabled style="width:5px; height:35px;" [(ngModel)]="paciente.persona.TipoDeIdentificacion "  class="form-select"
-                                            aria-label="Default select example">
-                                            <option value="TI">TI</option>
-                                            <option value="CC">CC</option>
-                                            <option value="PAS">PAS</option>
-                                            <option value="CCE">CCE</option>
+                                        <select name="sexo" style="width:5px; height:35px;" [(ngModel)]="paciente.persona.tipoDeIdentificacion "  class="form-select"
+                                        aria-label="Default select example">
+                                        <option value="TI">TI</option>
+                                        <option value="CC">CC</option>
+                                        <option value="PAS">PAS</option>
+                                        <option value="CCE">CCE</option>
                                         </select>
-                                        <input type="text" disabled  class="form-control identification" disabled value="{{paciente.codigoPaciente}}">
+                                        
+                                        <input type="text"   class="form-control identification" disabled value="{{paciente.codigoPaciente}}">
+                                        
                                     </div>
                                 </div>
                                 <div class="col">
                                     <label>Nombres</label>
-                                    <input type="text" disabled [(ngModel)]=" paciente.persona.nombre" name="nombres" >
+                                    <input type="text"  [(ngModel)]=" paciente.persona.nombre" name="nombres" >
     
                                 </div>
                             </div>
@@ -128,11 +132,11 @@
                             <div class="row">
                                 <div class="col">
                                     <label>Apellidos</label>
-                                    <input type="text" disabled [(ngModel)]=" paciente.persona.apellido" name="apellidos" >
+                                    <input type="text"  [(ngModel)]=" paciente.persona.apellido" name="apellidos" >
                                 </div>
                                 <div class="col">
                                     <label>Edad</label>
-                                    <input type="number" disabled [(ngModel)]=" paciente.persona.edad" name="edad" >
+                                    <input type="number"  [(ngModel)]=" paciente.persona.edad" name="edad" >
     
                                 </div>
                             </div>
@@ -142,11 +146,11 @@
                             <div class="row">
                                 <div class="col">
                                     <label>Usuario</label>
-                                    <input type="text" disabled [(ngModel)]=" paciente.persona.usuario" name="user" >
+                                    <input type="text" disable [(ngModel)]=" paciente.persona.usuario" name="user" >
                                 </div>
                                 <div class="col">
                                     <label>Contraseña</label>
-                                    <input type="text" disabled [(ngModel)]=" paciente.persona.passwordd" name="pass" >
+                                    <input type="text" disable [(ngModel)]=" paciente.persona.passwordd" name="pass" >
     
                                 </div>
                             </div>
@@ -156,11 +160,11 @@
                             <div class="row">
                                 <div class="col">
                                     <label>Correo</label>
-                                    <input type="text" disabled [(ngModel)]="paciente.persona.correo" name="correo">
+                                    <input type="text"  [(ngModel)]="paciente.persona.correo" name="correo">
                                 </div>
                                 <div class="col">
                                     <label>Direccion</label>
-                                    <input type="text" disabled [(ngModel)]="paciente.persona.direccion" name="direccion">
+                                    <input type="text"  [(ngModel)]="paciente.persona.direccion" name="direccion">
                                 </div>
                             </div>
                         </div>
@@ -169,12 +173,12 @@
                             <div class="row">
                                 <div class="col">
                                     <label>Telefono</label>
-                                    <input type="text" disabled [(ngModel)]="paciente.persona.telefono" name="telefono">
+                                    <input type="text"  [(ngModel)]="paciente.persona.telefono" name="telefono">
                                 </div>
                             </div>
                         </div>
                         <label>Sexo</label>
-                        <select name="sexo" disabled [(ngModel)]=" paciente.persona.sexo"  class="form-select" aria-label="Default select example"
+                        <select name="sexo"  [(ngModel)]=" paciente.persona.sexo"  class="form-select" aria-label="Default select example"
                             >
                             <option value="M">Masculino</option>
                             <option value="F">Femenino</option>

@@ -1,5 +1,5 @@
 export class Persona {
-    TipoDeIdentificacion : string
+    tipoDeIdentificacion : string
     identification: string
     nombre: string
     apellido: string
@@ -12,7 +12,5 @@ export class Persona {
     correo : string
     telefono : string
 
-    constructor (){
-        TipoDeIdentificacion:"";
-    }
+   
 }
