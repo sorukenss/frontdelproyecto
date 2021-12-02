@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import {TratamientoService} from 'src/app/services/Tratamiento.service'
 @Component({
   selector: 'app-consultar-tratamiento',
   templateUrl: './consultar-tratamiento.component.html',
@@ -10,16 +10,24 @@ export class ConsultarTratamientoComponent implements OnInit {
 
   rows = 10;
   personas:any[] = [];
-  constructor() {
+ 
+  constructor(private tratamientoservice:TratamientoService) {
     
    }
 
   ngOnInit(): void {
-    this.personas=[
-      {identificacion:'1234', nombre:'Everth', apellido:'Llanos', edad:'20'},
-      {identificacion:'4321', nombre:'Isaac', apellido:'Pimienta', edad:'30'},
-      {identificacion:'2222', nombre:'Iván', apellido:'Mendoza', edad:'50'}
-    ]
+    this.get();
+    
+  }
+
+  get(){
+    let response;
+    this.tratamientoservice.get().subscribe(r=>{
+      response=r;
+      this.tratamientoservice=response.tratamientos;
+      
+    })
+    
   }
 
 }
